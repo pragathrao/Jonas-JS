@@ -1,0 +1,34 @@
+.features{
+    grid-column: center-start/center-end;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem,1fr));  // auto-fit the element with spacing of 1 fr unit between them normally but not less than 250px, which menans the the site reaches breakpoints when there is less than 250 px space left and the column collapses and a new row is formed 
+
+    // The elemennt as a whole are aligned using the above column property first 
+    gap: 6rem;
+    margin: 15rem 0;
+    align-items: start;
+
+}
+
+.feature{
+    display: grid;
+    grid-template-columns: min-content 1fr;  // the icon is given space enough to fit itself which the rest is given 1 fr space, which is the rest space
+    // The Grid Rows are also not mentioned because we want the browser to automatically decide how many rows to create based on the content avaiable.
+
+    // The individual element aligned using the this one instead 
+    row-gap: 1.5rem;
+    column-gap: 2.5rem;
+    &__icon{
+        fill: $color-primary;
+        width: 4.5rem;
+        height: 4.5rem;
+        grid-row: 1/ span 2;
+        transform: translateY(-1rem);
+
+
+    }
+
+    &__text{
+        font-size: 1.7rem;
+    }
+}
